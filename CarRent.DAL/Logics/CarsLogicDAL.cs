@@ -15,7 +15,7 @@ namespace CarRent.DAL.Logics
             return await db.Cars.Select(car => new CarEntity
             {
                 Id = car.Id,
-                Photo = car.Photo,
+                Image = car.Image,
                 Model = car.Model,
                 PricePerDay = car.PricePerDay,
                 CarNumber = car.CarNumber,
@@ -40,7 +40,7 @@ namespace CarRent.DAL.Logics
                 Model = model.Model,
                 ManufacturerId = model.ManufacturerId,
                 PricePerDay = model.PricePerDay,
-                Photo = model.Photo
+                Image = model.Image
             }).ToListAsync();
         }
         public async Task<CarEntity> GetCarById(int id)
@@ -50,7 +50,7 @@ namespace CarRent.DAL.Logics
                 .Select(car => new CarEntity 
                 {
                     Id = car.Id,
-                    Photo = car.Photo,
+                    Image = car.Image,
                     Model = car.Model,
                     PricePerDay = car.PricePerDay,
                     CarNumber = car.CarNumber,

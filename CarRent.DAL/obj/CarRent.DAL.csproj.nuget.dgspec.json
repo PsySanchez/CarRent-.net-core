@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\User\\OneDrive\\Desktop\\CarRent.WebApi\\CarRent.DAL\\CarRent.DAL.csproj": {}
+    "C:\\Users\\User\\OneDrive\\Documents\\GitRepos\\CarRent .net core\\CarRent.DAL\\CarRent.DAL.csproj": {}
   },
   "projects": {
-    "C:\\Users\\User\\OneDrive\\Desktop\\CarRent.WebApi\\CarRent.DAL\\CarRent.DAL.csproj": {
+    "C:\\Users\\User\\OneDrive\\Documents\\GitRepos\\CarRent .net core\\CarRent.DAL\\CarRent.DAL.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\User\\OneDrive\\Desktop\\CarRent.WebApi\\CarRent.DAL\\CarRent.DAL.csproj",
+        "projectUniqueName": "C:\\Users\\User\\OneDrive\\Documents\\GitRepos\\CarRent .net core\\CarRent.DAL\\CarRent.DAL.csproj",
         "projectName": "CarRent.DAL",
-        "projectPath": "C:\\Users\\User\\OneDrive\\Desktop\\CarRent.WebApi\\CarRent.DAL\\CarRent.DAL.csproj",
+        "projectPath": "C:\\Users\\User\\OneDrive\\Documents\\GitRepos\\CarRent .net core\\CarRent.DAL\\CarRent.DAL.csproj",
         "packagesPath": "C:\\Users\\User\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\User\\OneDrive\\Desktop\\CarRent.WebApi\\CarRent.DAL\\obj\\",
+        "outputPath": "C:\\Users\\User\\OneDrive\\Documents\\GitRepos\\CarRent .net core\\CarRent.DAL\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\User\\AppData\\Roaming\\NuGet\\NuGet.Config",
@@ -27,8 +27,8 @@
         "frameworks": {
           "netcoreapp3.1": {
             "projectReferences": {
-              "C:\\Users\\User\\OneDrive\\Desktop\\CarRent.WebApi\\CarRent.Entities\\CarRent.Entities.csproj": {
-                "projectPath": "C:\\Users\\User\\OneDrive\\Desktop\\CarRent.WebApi\\CarRent.Entities\\CarRent.Entities.csproj"
+              "C:\\Users\\User\\OneDrive\\Documents\\GitRepos\\CarRent .net core\\CarRent.Entities\\CarRent.Entities.csproj": {
+                "projectPath": "C:\\Users\\User\\OneDrive\\Documents\\GitRepos\\CarRent .net core\\CarRent.Entities\\CarRent.Entities.csproj"
               }
             }
           }
@@ -78,14 +78,14 @@
         }
       }
     },
-    "C:\\Users\\User\\OneDrive\\Desktop\\CarRent.WebApi\\CarRent.Entities\\CarRent.Entities.csproj": {
+    "C:\\Users\\User\\OneDrive\\Documents\\GitRepos\\CarRent .net core\\CarRent.Entities\\CarRent.Entities.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\User\\OneDrive\\Desktop\\CarRent.WebApi\\CarRent.Entities\\CarRent.Entities.csproj",
+        "projectUniqueName": "C:\\Users\\User\\OneDrive\\Documents\\GitRepos\\CarRent .net core\\CarRent.Entities\\CarRent.Entities.csproj",
         "projectName": "CarRent.Entities",
-        "projectPath": "C:\\Users\\User\\OneDrive\\Desktop\\CarRent.WebApi\\CarRent.Entities\\CarRent.Entities.csproj",
+        "projectPath": "C:\\Users\\User\\OneDrive\\Documents\\GitRepos\\CarRent .net core\\CarRent.Entities\\CarRent.Entities.csproj",
         "packagesPath": "C:\\Users\\User\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\User\\OneDrive\\Desktop\\CarRent.WebApi\\CarRent.Entities\\obj\\",
+        "outputPath": "C:\\Users\\User\\OneDrive\\Documents\\GitRepos\\CarRent .net core\\CarRent.Entities\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\User\\AppData\\Roaming\\NuGet\\NuGet.Config",

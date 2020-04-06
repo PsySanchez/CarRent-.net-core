@@ -25,3 +25,18 @@ C:\Users\User\OneDrive\Desktop\CarRent.WebApi\CarRent.DAL\obj\Debug\netcoreapp3.
 C:\Users\User\OneDrive\Desktop\CarRent.WebApi\CarRent.DAL\obj\Debug\netcoreapp3.1\CarRent.DAL.dll
 C:\Users\User\OneDrive\Desktop\CarRent.WebApi\CarRent.DAL\obj\Debug\netcoreapp3.1\CarRent.DAL.pdb
 C:\Users\User\OneDrive\Desktop\CarRent.WebApi\CarRent.DAL\obj\Debug\netcoreapp3.1\CarRent.DAL.genruntimeconfig.cache
+C:\Users\User\OneDrive\Documents\GitRepos\CarRent .net core\CarRent.DAL\bin\Debug\netcoreapp3.1\CarRent.DAL.deps.json
+C:\Users\User\OneDrive\Documents\GitRepos\CarRent .net core\CarRent.DAL\bin\Debug\netcoreapp3.1\CarRent.DAL.runtimeconfig.json
+C:\Users\User\OneDrive\Documents\GitRepos\CarRent .net core\CarRent.DAL\bin\Debug\netcoreapp3.1\CarRent.DAL.runtimeconfig.dev.json
+C:\Users\User\OneDrive\Documents\GitRepos\CarRent .net core\CarRent.DAL\bin\Debug\netcoreapp3.1\CarRent.DAL.dll
+C:\Users\User\OneDrive\Documents\GitRepos\CarRent .net core\CarRent.DAL\bin\Debug\netcoreapp3.1\CarRent.DAL.pdb
+C:\Users\User\OneDrive\Documents\GitRepos\CarRent .net core\CarRent.DAL\bin\Debug\netcoreapp3.1\CarRent.Entities.dll
+C:\Users\User\OneDrive\Documents\GitRepos\CarRent .net core\CarRent.DAL\bin\Debug\netcoreapp3.1\CarRent.Entities.pdb
+C:\Users\User\OneDrive\Documents\GitRepos\CarRent .net core\CarRent.DAL\obj\Debug\netcoreapp3.1\CarRent.DAL.csprojAssemblyReference.cache
+C:\Users\User\OneDrive\Documents\GitRepos\CarRent .net core\CarRent.DAL\obj\Debug\netcoreapp3.1\CarRent.DAL.csproj.CoreCompileInputs.cache
+C:\Users\User\OneDrive\Documents\GitRepos\CarRent .net core\CarRent.DAL\obj\Debug\netcoreapp3.1\CarRent.DAL.AssemblyInfoInputs.cache
+C:\Users\User\OneDrive\Documents\GitRepos\CarRent .net core\CarRent.DAL\obj\Debug\netcoreapp3.1\CarRent.DAL.AssemblyInfo.cs
+C:\Users\User\OneDrive\Documents\GitRepos\CarRent .net core\CarRent.DAL\obj\Debug\netcoreapp3.1\CarRent.DAL.csproj.CopyComplete
+C:\Users\User\OneDrive\Documents\GitRepos\CarRent .net core\CarRent.DAL\obj\Debug\netcoreapp3.1\CarRent.DAL.dll
+C:\Users\User\OneDrive\Documents\GitRepos\CarRent .net core\CarRent.DAL\obj\Debug\netcoreapp3.1\CarRent.DAL.pdb
+C:\Users\User\OneDrive\Documents\GitRepos\CarRent .net core\CarRent.DAL\obj\Debug\netcoreapp3.1\CarRent.DAL.genruntimeconfig.cache

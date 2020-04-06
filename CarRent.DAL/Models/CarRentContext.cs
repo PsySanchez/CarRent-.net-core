@@ -46,6 +46,10 @@ namespace CarRent.DAL.Models
                     .IsRequired()
                     .HasMaxLength(50);
 
+                entity.Property(e => e.Image)
+                    .IsRequired()
+                    .HasMaxLength(250);
+
                 entity.Property(e => e.ManufacturerName)
                     .IsRequired()
                     .HasMaxLength(50);
@@ -53,10 +57,6 @@ namespace CarRent.DAL.Models
                 entity.Property(e => e.Model)
                     .IsRequired()
                     .HasMaxLength(50);
-
-                entity.Property(e => e.Photo)
-                    .IsRequired()
-                    .HasMaxLength(250);
 
                 entity.Property(e => e.PricePerDay).HasColumnType("money");
             });
@@ -114,13 +114,13 @@ namespace CarRent.DAL.Models
 
             modelBuilder.Entity<ModelsCar>(entity =>
             {
+                entity.Property(e => e.Image)
+                    .IsRequired()
+                    .HasMaxLength(250);
+
                 entity.Property(e => e.Model)
                     .IsRequired()
                     .HasMaxLength(50);
-
-                entity.Property(e => e.Photo)
-                    .IsRequired()
-                    .HasMaxLength(250);
 
                 entity.Property(e => e.PricePerDay).HasColumnType("money");
 

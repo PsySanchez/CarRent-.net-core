@@ -21,3 +21,17 @@ C:\Users\User\OneDrive\Desktop\CarRent.WebApi\CarRent.BL\obj\Debug\netcoreapp3.1
 C:\Users\User\OneDrive\Desktop\CarRent.WebApi\CarRent.BL\obj\Debug\netcoreapp3.1\CarRent.BL.csproj.CopyComplete
 C:\Users\User\OneDrive\Desktop\CarRent.WebApi\CarRent.BL\obj\Debug\netcoreapp3.1\CarRent.BL.dll
 C:\Users\User\OneDrive\Desktop\CarRent.WebApi\CarRent.BL\obj\Debug\netcoreapp3.1\CarRent.BL.pdb
+C:\Users\User\OneDrive\Documents\GitRepos\CarRent .net core\CarRent.BL\bin\Debug\netcoreapp3.1\CarRent.BL.deps.json
+C:\Users\User\OneDrive\Documents\GitRepos\CarRent .net core\CarRent.BL\bin\Debug\netcoreapp3.1\CarRent.BL.dll
+C:\Users\User\OneDrive\Documents\GitRepos\CarRent .net core\CarRent.BL\bin\Debug\netcoreapp3.1\CarRent.BL.pdb
+C:\Users\User\OneDrive\Documents\GitRepos\CarRent .net core\CarRent.BL\bin\Debug\netcoreapp3.1\CarRent.DAL.dll
+C:\Users\User\OneDrive\Documents\GitRepos\CarRent .net core\CarRent.BL\bin\Debug\netcoreapp3.1\CarRent.Entities.dll
+C:\Users\User\OneDrive\Documents\GitRepos\CarRent .net core\CarRent.BL\bin\Debug\netcoreapp3.1\CarRent.DAL.pdb
+C:\Users\User\OneDrive\Documents\GitRepos\CarRent .net core\CarRent.BL\bin\Debug\netcoreapp3.1\CarRent.Entities.pdb
+C:\Users\User\OneDrive\Documents\GitRepos\CarRent .net core\CarRent.BL\obj\Debug\netcoreapp3.1\CarRent.BL.csprojAssemblyReference.cache
+C:\Users\User\OneDrive\Documents\GitRepos\CarRent .net core\CarRent.BL\obj\Debug\netcoreapp3.1\CarRent.BL.csproj.CoreCompileInputs.cache
+C:\Users\User\OneDrive\Documents\GitRepos\CarRent .net core\CarRent.BL\obj\Debug\netcoreapp3.1\CarRent.BL.AssemblyInfoInputs.cache
+C:\Users\User\OneDrive\Documents\GitRepos\CarRent .net core\CarRent.BL\obj\Debug\netcoreapp3.1\CarRent.BL.AssemblyInfo.cs
+C:\Users\User\OneDrive\Documents\GitRepos\CarRent .net core\CarRent.BL\obj\Debug\netcoreapp3.1\CarRent.BL.csproj.CopyComplete
+C:\Users\User\OneDrive\Documents\GitRepos\CarRent .net core\CarRent.BL\obj\Debug\netcoreapp3.1\CarRent.BL.dll
+C:\Users\User\OneDrive\Documents\GitRepos\CarRent .net core\CarRent.BL\obj\Debug\netcoreapp3.1\CarRent.BL.pdb

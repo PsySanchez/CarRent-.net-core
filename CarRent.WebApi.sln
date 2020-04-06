@@ -3,13 +3,51 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 16
 VisualStudioVersion = 16.0.29926.136
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CarRent.WebApi", "CarRent.WebApi\CarRent.WebApi.csproj", "{A4A665B7-ACFF-48B4-A4A7-7F4744D9350E}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "CarRent.WebApi", "CarRent.WebApi\CarRent.WebApi.csproj", "{A4A665B7-ACFF-48B4-A4A7-7F4744D9350E}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CarRent.Entities", "CarRent.Entities\CarRent.Entities.csproj", "{571FE6E4-5A67-4916-9418-EF2140849FAD}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "CarRent.Entities", "CarRent.Entities\CarRent.Entities.csproj", "{571FE6E4-5A67-4916-9418-EF2140849FAD}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CarRent.DAL", "CarRent.DAL\CarRent.DAL.csproj", "{4CDAE7FF-2505-41E5-A401-C9AB5D1B725F}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "CarRent.DAL", "CarRent.DAL\CarRent.DAL.csproj", "{4CDAE7FF-2505-41E5-A401-C9AB5D1B725F}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CarRent.BL", "CarRent.BL\CarRent.BL.csproj", "{CBC79AC1-B5CB-4835-AFF7-041976D6AC4C}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "CarRent.BL", "CarRent.BL\CarRent.BL.csproj", "{CBC79AC1-B5CB-4835-AFF7-041976D6AC4C}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Assets", "Assets", "{EABFF997-0785-4FA6-BB12-14D3520CA271}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "images", "images", "{AC0F4061-8DEF-4B20-9A49-A608DD9AE3DB}"
+	ProjectSection(SolutionItems) = preProject
+		Assets_old\images\chevroletSpark.png = Assets_old\images\chevroletSpark.png
+		Assets_old\images\chevroletTrax.png = Assets_old\images\chevroletTrax.png
+		Assets_old\images\hondaAccord.png = Assets_old\images\hondaAccord.png
+		Assets_old\images\hondaCivic.png = Assets_old\images\hondaCivic.png
+		Assets_old\images\hyundaiI10.png = Assets_old\images\hyundaiI10.png
+		Assets_old\images\hyundaiI20.png = Assets_old\images\hyundaiI20.png
+		Assets_old\images\hyundaiI25.png = Assets_old\images\hyundaiI25.png
+		Assets_old\images\hyundaiI30.png = Assets_old\images\hyundaiI30.png
+		Assets_old\images\hyundaiIoniq.png = Assets_old\images\hyundaiIoniq.png
+		Assets_old\images\kiaPicanto.png = Assets_old\images\kiaPicanto.png
+		Assets_old\images\mazda3.png = Assets_old\images\mazda3.png
+		Assets_old\images\volkswagenPassat.png = Assets_old\images\volkswagenPassat.png
+	EndProjectSection
+EndProject
+Project("{E24C65DC-7377-472B-9ABA-BC803B73C61A}") = "CarRent-Client", "CarRent-Client\", "{CEFAF2C4-21DA-4AA5-8522-778E28D67E5F}"
+	ProjectSection(WebsiteProperties) = preProject
+		TargetFrameworkMoniker = ".NETFramework,Version%3Dv4.0"
+		Debug.AspNetCompiler.VirtualPath = "/localhost_54130"
+		Debug.AspNetCompiler.PhysicalPath = "CarRent-Client\"
+		Debug.AspNetCompiler.TargetPath = "PrecompiledWeb\localhost_54130\"
+		Debug.AspNetCompiler.Updateable = "true"
+		Debug.AspNetCompiler.ForceOverwrite = "true"
+		Debug.AspNetCompiler.FixedNames = "false"
+		Debug.AspNetCompiler.Debug = "True"
+		Release.AspNetCompiler.VirtualPath = "/localhost_54130"
+		Release.AspNetCompiler.PhysicalPath = "CarRent-Client\"
+		Release.AspNetCompiler.TargetPath = "PrecompiledWeb\localhost_54130\"
+		Release.AspNetCompiler.Updateable = "true"
+		Release.AspNetCompiler.ForceOverwrite = "true"
+		Release.AspNetCompiler.FixedNames = "false"
+		Release.AspNetCompiler.Debug = "False"
+		VWDPort = "54130"
+	EndProjectSection
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -33,9 +71,16 @@ Global
 		{CBC79AC1-B5CB-4835-AFF7-041976D6AC4C}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{CBC79AC1-B5CB-4835-AFF7-041976D6AC4C}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{CBC79AC1-B5CB-4835-AFF7-041976D6AC4C}.Release|Any CPU.Build.0 = Release|Any CPU
+		{CEFAF2C4-21DA-4AA5-8522-778E28D67E5F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{CEFAF2C4-21DA-4AA5-8522-778E28D67E5F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{CEFAF2C4-21DA-4AA5-8522-778E28D67E5F}.Release|Any CPU.ActiveCfg = Debug|Any CPU
+		{CEFAF2C4-21DA-4AA5-8522-778E28D67E5F}.Release|Any CPU.Build.0 = Debug|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{AC0F4061-8DEF-4B20-9A49-A608DD9AE3DB} = {EABFF997-0785-4FA6-BB12-14D3520CA271}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {39D58AC8-90A3-469A-A327-C1EEC960FF90}

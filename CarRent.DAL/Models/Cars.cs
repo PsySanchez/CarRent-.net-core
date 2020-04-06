@@ -9,7 +9,7 @@ namespace CarRent.DAL.Models
         public string CarNumber { get; set; }
         public string Model { get; set; }
         public decimal PricePerDay { get; set; }
-        public string Photo { get; set; }
+        public string Image { get; set; }
         public string ManufacturerName { get; set; }
     }
 }
