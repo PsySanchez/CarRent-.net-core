@@ -14,7 +14,7 @@ namespace CarRent.WebApi.Helpers
             return new CarView
             {
                 Id = carModel.Id,
-                Photo = carModel.Image,
+                Image = carModel.Image,
                 Model = carModel.Model,
                 PricePerDay = carModel.PricePerDay,
                 CarNumber = carModel.CarNumber,
@@ -27,7 +27,7 @@ namespace CarRent.WebApi.Helpers
         {
             return new CarEntity
             {
-                Image = carViewModel.Photo,
+                Image = carViewModel.Image,
                 Model = carViewModel.Model,
                 PricePerDay = carViewModel.PricePerDay,
                 CarNumber = carViewModel.CarNumber,

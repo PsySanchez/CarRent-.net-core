@@ -1,0 +1,73 @@
+<div class="reg-form">
+    <form [formGroup]="regForm"
+          (ngSubmit)="onSubmit()">
+        <mat-form-field>
+            <mat-label>First name</mat-label>
+            <input matInput
+                   formControlName="firstName"
+                   required>
+            <mat-error *ngIf="regForm.controls.firstName.invalid">
+                First name if <strong>required</strong>
+            </mat-error>
+        </mat-form-field>
+        <br>
+        <mat-form-field>
+            <mat-label>Last name</mat-label>
+            <input matInput
+                   formControlName="lastName"
+                   required>
+            <mat-error *ngIf="regForm.controls.lastName.invalid">
+                Last name is <strong>required</strong>
+            </mat-error>
+        </mat-form-field>
+        <br>
+        <mat-form-field>
+            <mat-label>Email</mat-label>
+            <input type="email"
+                   matInput
+                   formControlName="email"
+                   required>
+            <mat-error *ngIf="regForm.controls.email.invalid">
+                Email is <strong>required</strong>
+            </mat-error>
+        </mat-form-field>
+        <br>
+        <mat-form-field>
+            <mat-label>Password</mat-label>
+            <input type="password"
+                   matInput
+                   formControlName="password"
+                   required>
+            <mat-error *ngIf="regForm.controls.password.invalid">
+                Password is <strong>required</strong>
+            </mat-error>
+        </mat-form-field>
+        <br>
+        <mat-form-field>
+            <mat-label>Phone number</mat-label>
+            <input type="tel"
+                   matInput
+                   formControlName="phoneNumber"
+                   required>
+            <mat-error *ngIf="regForm.controls.phoneNumber.invalid">
+                Phone number is <strong>required</strong>
+            </mat-error>
+        </mat-form-field>
+        <br>
+        <mat-form-field>
+            <mat-label>Date of Birth</mat-label>
+            <input type="date"
+                   matInput
+                   formControlName="dateOfBirth"
+                   required>
+            <mat-error *ngIf="regForm.controls.dateOfBirth.invalid">
+                Date of birth is <strong>required</strong>
+            </mat-error>
+        </mat-form-field>
+        <br>
+
+        <button mat-raised-button
+                color="primary"
+                [disabled]="regForm.invalid">Register</button>
+    </form>
+</div>

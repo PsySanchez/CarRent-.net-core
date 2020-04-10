@@ -1,0 +1,17 @@
+@import "../../styles/main.scss";
+
+$padding: 15px;
+$borders: 15px;
+
+.mat-form-field {
+  width: 500px;
+}
+
+.login-form {
+  display: flex;
+  justify-content: center;
+}
+
+#register-button {
+  margin: 15px;
+}

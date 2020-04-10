@@ -1,0 +1,11 @@
+@import '../../styles/main.scss';
+
+
+table {
+    width: 100%;
+    overflow: hidden;
+    table-layout: fixed;
+    word-wrap: normal;
+    word-break: keep-all;
+    margin: 0 !important;
+  }
