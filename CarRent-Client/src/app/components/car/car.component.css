@@ -1,1 +1,9 @@
-/* No CSS *//*# sourceMappingURL=car.component.css.map */
+.nav-list {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+}
+/*# sourceMappingURL=car.component.css.map */

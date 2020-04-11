@@ -1,26 +1,45 @@
-<div>
-    <mat-nav-list>
-        <a href="https://keep.google.com/" mat-list-item (click)="openLink($event)">
-          <span mat-line>Google Keep</span>
-          <span mat-line>Add to a note</span>
-        </a>
-      
-        <a href="https://docs.google.com/" mat-list-item (click)="openLink($event)">
-          <span mat-line>Google Docs</span>
-          <span mat-line>Embed in a document</span>
-        </a>
-      
-        <a href="https://plus.google.com/" mat-list-item (click)="openLink($event)">
-          <span mat-line>Google Plus</span>
-          <span mat-line>Share with your friends</span>
-        </a>
-      
-        <a href="https://hangouts.google.com/" mat-list-item (click)="openLink($event)">
-          <span mat-line>Google Hangouts</span>
-          <span mat-line>Show to your coworkers</span>
-        </a>
-        <a href="#" mat-list-item (click)="openLink($event)">
-            <span mat-line>{{data}}</span>
-          </a>
-      </mat-nav-list>
+<div class="nav-list">
+  <mat-nav-list>
+    <mat-list-item>
+      <span mat-line>Manufacturer: {{car.manufacturer}}</span>
+      <span mat-line>Model: {{car.model}}</span>
+      <span mat-line>Price: {{car.pricePerDay}}</span>
+      <span mat-line> <img src="{{imagesFolder}}/{{car.image}}"
+             width="100"
+             height="100"></span>
+    </mat-list-item>
+  </mat-nav-list>
+  <mat-nav-list class="order-list">
+    <mat-list-item>
+      <form [formGroup]="orderForm">
+        <mat-form-field mat-line>
+          <input matInput
+                 [min]="minDateFrom"
+                 [matDatepicker]="pickerFromDate"
+                 formControlName="fromDate"
+                 placeholder="From date"
+                 (ngModelChange)="setDateToForm()">
+          <mat-datepicker-toggle matSuffix
+                                 [for]="pickerFromDate"></mat-datepicker-toggle>
+          <mat-datepicker #pickerFromDate></mat-datepicker>
+        </mat-form-field>
+
+        <mat-form-field mat-line>
+          <input matInput
+                 [min]="minDateTo"
+                 [matDatepicker]="pickerToDate"
+                 formControlName="toDate"
+                 placeholder="To date">
+          <mat-datepicker-toggle matSuffix
+                                 [for]="pickerToDate"></mat-datepicker-toggle>
+          <mat-datepicker #pickerToDate></mat-datepicker>
+        </mat-form-field>
+        <button mat-line
+                mat-raised-button
+                color="primary"
+                [disabled]="orderForm.invalid"
+                (click)="onSubmit($event)">Order</button>
+      </form>
+    </mat-list-item>
+  </mat-nav-list>
 </div>

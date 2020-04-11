@@ -11,6 +11,7 @@ import { MatPaginatorModule } from '@angular/material/paginator';
 import { MatProgressBarModule } from '@angular/material/progress-bar';
 import {MatListModule} from '@angular/material/list';
 import {MatBottomSheetModule} from '@angular/material/bottom-sheet';
+import {MatDatepickerModule} from '@angular/material/datepicker';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -32,6 +33,7 @@ import { RegisterComponent } from './components/register/register.component';
 import { CarsComponent } from './components/cars/cars.component';
 import { CarComponent } from './components/car/car.component';
 import { OrderComponent } from './components/order/order.component';
+import { MatNativeDateModule } from '@angular/material/core';
 
 @NgModule({
   declarations: [
@@ -61,8 +63,10 @@ import { OrderComponent } from './components/order/order.component';
     MatProgressBarModule,
     MatListModule,
     MatBottomSheetModule,
+    MatDatepickerModule,
+    MatNativeDateModule,
   ],
-  providers: [AuthenticationService, UserService, CarsService, CacheService],
+  providers: [AuthenticationService, UserService, CarsService, CacheService, MatDatepickerModule],
   bootstrap: [AppComponent],
 })
 export class AppModule {}
