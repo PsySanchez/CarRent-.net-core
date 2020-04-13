@@ -1,0 +1,11 @@
+<h1 mat-dialog-title>{{data.text}}</h1>
+<h1 mat-dialog-title *ngIf="data.fromDate">From date: {{data.fromDate | date}}</h1>
+<h1 mat-dialog-title *ngIf="data.toDate">To date: {{data.toDate | date}}</h1>
+
+<div mat-dialog-actions>
+    <button mat-button
+            mat-dialog-close>No Thanks</button>
+    <button mat-button
+            [mat-dialog-close]="true"
+            cdkFocusInitial>Ok</button>
+</div>

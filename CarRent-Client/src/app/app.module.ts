@@ -3,16 +3,18 @@ import { NgModule } from '@angular/core';
 import { MatTabsModule } from '@angular/material/tabs';
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { ReactiveFormsModule } from '@angular/forms';
-import { HttpClientModule } from '@angular/common/http';
+import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
 import { MatInputModule } from '@angular/material/input';
 import { MatButtonModule } from '@angular/material/button';
 import { MatTableModule } from '@angular/material/table';
 import { MatPaginatorModule } from '@angular/material/paginator';
 import { MatProgressBarModule } from '@angular/material/progress-bar';
-import {MatListModule} from '@angular/material/list';
-import {MatBottomSheetModule} from '@angular/material/bottom-sheet';
-import {MatDatepickerModule} from '@angular/material/datepicker';
-
+import { MatListModule } from '@angular/material/list';
+import { MatBottomSheetModule } from '@angular/material/bottom-sheet';
+import { MatDatepickerModule } from '@angular/material/datepicker';
+import { MatNativeDateModule, MAT_DATE_LOCALE } from '@angular/material/core';
+import {MatDialogModule} from '@angular/material/dialog';
+import { ToastrModule } from 'ngx-toastr';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import {
@@ -20,20 +22,21 @@ import {
   HomeComponent,
   Page404Component,
   NavbarComponent,
-} from './components/index';
+  LoginComponent,
+  RegisterComponent,
+  CarsComponent,
+  CarComponent,
+} from './components';
 import {
   CarsService,
   UserService,
   CacheService,
   AuthenticationService,
+  OrderService,
 } from './services/index';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-import { LoginComponent } from './components/login/login.component';
-import { RegisterComponent } from './components/register/register.component';
-import { CarsComponent } from './components/cars/cars.component';
-import { CarComponent } from './components/car/car.component';
-import { OrderComponent } from './components/order/order.component';
-import { MatNativeDateModule } from '@angular/material/core';
+import { TokenInterceptor, ErrorInterceptor } from './helpers';
+import { DialogBoxComponent } from './components/dialog-box/dialog-box.component';
 
 @NgModule({
   declarations: [
@@ -46,7 +49,7 @@ import { MatNativeDateModule } from '@angular/material/core';
     RegisterComponent,
     CarsComponent,
     CarComponent,
-    OrderComponent,
+    DialogBoxComponent,
   ],
   imports: [
     BrowserModule,
@@ -65,8 +68,20 @@ import { MatNativeDateModule } from '@angular/material/core';
     MatBottomSheetModule,
     MatDatepickerModule,
     MatNativeDateModule,
+    ToastrModule.forRoot(),
+    MatDialogModule,
   ],
-  providers: [AuthenticationService, UserService, CarsService, CacheService, MatDatepickerModule],
+  providers: [
+    { provide: HTTP_INTERCEPTORS, useClass: TokenInterceptor, multi: true },
+    { provide: HTTP_INTERCEPTORS, useClass: ErrorInterceptor, multi: true },
+    AuthenticationService,
+    UserService,
+    CarsService,
+    CacheService,
+    MatDatepickerModule,
+    OrderService,
+    { provide: MAT_DATE_LOCALE, useValue: 'en-GB' },
+  ],
   bootstrap: [AppComponent],
 })
 export class AppModule {}

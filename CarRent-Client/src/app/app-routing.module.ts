@@ -6,7 +6,6 @@ import {
   HomeComponent,
   LoginComponent,
   RegisterComponent,
-  OrderComponent,
 } from 'src/app/components/index';
 
 const routes: Routes = [
@@ -14,7 +13,6 @@ const routes: Routes = [
   { path: 'search', component: SearchComponent },
   { path: 'login', component: LoginComponent },
   { path: 'register', component: RegisterComponent },
-  { path: 'order', component: OrderComponent },
 
   { path: 'page404', component: Page404Component },
   { path: '**', redirectTo: 'home' },

@@ -110,6 +110,7 @@ namespace CarRent.WebApi.Helpers
                 FromDate = orderView.FromDate,
                 ToDate = orderView.ToDate,
                 TotalCost = orderView.TotalCost,
+                UserId = (int)orderView.UserId
             };
         }
 

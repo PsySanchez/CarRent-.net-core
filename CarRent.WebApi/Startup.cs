@@ -55,7 +55,7 @@ namespace CarRent.WebApi
                 {
                     builder.WithOrigins("http://localhost:4200")
                     .AllowAnyHeader()
-                    .AllowAnyMethod(); ;
+                    .AllowAnyMethod();
                 });
             });
         }
@@ -69,10 +69,12 @@ namespace CarRent.WebApi
             }
 
             app.UseRouting();
+
+            app.UseCors(AllowSpecificOrigins);
+
             app.UseAuthentication();
             app.UseAuthorization();
 
-            app.UseCors(AllowSpecificOrigins);
 
             app.UseEndpoints(endpoints =>
             {

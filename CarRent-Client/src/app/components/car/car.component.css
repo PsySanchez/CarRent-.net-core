@@ -6,4 +6,12 @@
       -ms-flex-pack: justify;
           justify-content: space-between;
 }
+
+.order-list {
+  margin-top: 40px;
+}
+
+.mat-raised-button {
+  margin-top: 10px;
+}
 /*# sourceMappingURL=car.component.css.map */

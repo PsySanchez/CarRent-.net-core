@@ -6,8 +6,9 @@ import { MatTableDataSource } from '@angular/material/table';
 import { MatPaginator } from '@angular/material/paginator';
 import { environment } from 'src/environments/environment';
 import { Router } from '@angular/router';
-import {MatBottomSheet } from '@angular/material/bottom-sheet';
+import { MatBottomSheet } from '@angular/material/bottom-sheet';
 import { CarComponent } from '../car/car.component';
+import { ToastrService } from 'ngx-toastr';
 
 @Component({
   selector: 'app-cars',
@@ -35,7 +36,8 @@ export class CarsComponent implements OnInit {
   constructor(
     private readonly carsService: CarsService,
     private router: Router,
-    private bottomSheet: MatBottomSheet
+    private bottomSheet: MatBottomSheet,
+    private toastr: ToastrService,
   ) {}
 
   @ViewChild(MatPaginator, { static: false }) paginator: MatPaginator;
@@ -54,14 +56,16 @@ export class CarsComponent implements OnInit {
   }
 
   public goToOrder(id: number): void {
-    this.bottomSheet.open(CarComponent, {
-      data: { names: ['id', id] },
-    });
-
-    // this.router.navigate(['/order'], {
-    //   queryParams: {
-    //     carId: id,
-    //   }
-    // });
+    const token = localStorage.getItem('accessToken');
+    if (token) {
+      this.bottomSheet.open(CarComponent, {
+        data: { names: ['id', id] },
+      });
+    } else {
+      this.toastr.error('You are not authorized!', 'Please Login.', {
+        timeOut: 3000,
+        positionClass: 'toast-top-right',
+      });
+    }
   }
 }
