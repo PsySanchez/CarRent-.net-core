@@ -5,6 +5,4 @@ export * from './search/search.component';
 export * from './login/login.component';
 export * from './register/register.component';
 export * from './cars/cars.component';
-export * from './car/car.component';
-
-
+export * from './order/order.component';

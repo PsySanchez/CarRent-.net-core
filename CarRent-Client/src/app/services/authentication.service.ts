@@ -1,17 +1,19 @@
-import { Injectable } from '@angular/core';
+import { Injectable, Output } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { map } from 'rxjs/operators';
 import { environment } from '../../environments/environment';
-import { Subject, Observable } from 'rxjs';
+import { Observable, BehaviorSubject } from 'rxjs';
 import * as jwt_decode from 'jwt-decode';
 import { FormGroup } from '@angular/forms';
 import { UserHelper } from '../helpers/user.helper';
 
 @Injectable({ providedIn: 'root' })
-export class AuthenticationService {
-  public IsUserLoggedIn: Subject<boolean> = new Subject<boolean>();
+export class AuthService {
+  @Output() IsUserLoggedIn = new BehaviorSubject(0);
 
-  constructor(private http: HttpClient) {}
+  constructor(private http: HttpClient) {
+    this.checkIsUserLoggedIn();
+  }
 
   public login(loginForm: FormGroup): Observable<any> {
     return this.http
@@ -22,7 +24,6 @@ export class AuthenticationService {
       .pipe(
         map((token) => {
           this.setCurrentUserToLocalStorage(token);
-          this.IsUserLoggedIn.next(true);
           return token;
         })
       );
@@ -38,9 +39,9 @@ export class AuthenticationService {
     return this.http
       .post<any>(`${environment.apiUrl}/authentication/refresh`, refreshToken)
       .pipe(
-        map((token) => {
+        map((token: any) => {
           this.setCurrentUserToLocalStorage(token);
-          this.IsUserLoggedIn.next(true);
+          return token;
         })
       );
   }
@@ -49,8 +50,7 @@ export class AuthenticationService {
     // remove user from local storage to log user out
     localStorage.removeItem('accessToken');
     localStorage.removeItem('currentUser');
-
-    this.IsUserLoggedIn.next(false);
+    this.IsUserLoggedIn.next(0);
   }
 
   private getDecodedAccessToken(token: string): any {
@@ -71,17 +71,29 @@ export class AuthenticationService {
       const result = {};
       for (const key of keys) {
         result[String(key).split('/').pop()] = userData[key];
+        // Check if role is exist and set het:
       }
       localStorage.setItem('currentUser', JSON.stringify(result));
+      this.IsUserLoggedIn.next(1);
     }
   }
 
-  // var result = Object.keys(token).map((key) => [
-  //   String(key).split("/").pop(),
-  //   token[key],
-  // ]);
-  // for (let i = 0; i < keys.length; i++) {
-  //     const key = keys[i];
-  //     result[String(key).split('/').pop()] = token[key];
-  //   }
+  public getUserRole(): string {
+    const user = JSON.parse(localStorage.getItem('currentUser'));
+    if (user) {
+      return user.role;
+    }
+    return null;
+  }
+
+  private checkIsUserLoggedIn(): void {
+    const user = JSON.parse(localStorage.getItem('currentUser'));
+    if (user) {
+      this.IsUserLoggedIn.next(1);
+    }
+  }
+
+  public getJwtToken(): any {
+    return JSON.parse(localStorage.getItem('accessToken'));
+  }
 }

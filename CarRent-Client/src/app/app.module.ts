@@ -25,18 +25,19 @@ import {
   LoginComponent,
   RegisterComponent,
   CarsComponent,
-  CarComponent,
+  OrderComponent,
 } from './components';
 import {
   CarsService,
   UserService,
   CacheService,
-  AuthenticationService,
+  AuthService,
   OrderService,
 } from './services/index';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-import { TokenInterceptor, ErrorInterceptor } from './helpers';
+import { TokenInterceptor, ErrorInterceptor, AuthGuard, AuthAdminGuard, LogoutGuard } from './helpers';
 import { DialogBoxComponent } from './components/dialog-box/dialog-box.component';
+
 
 @NgModule({
   declarations: [
@@ -48,7 +49,7 @@ import { DialogBoxComponent } from './components/dialog-box/dialog-box.component
     LoginComponent,
     RegisterComponent,
     CarsComponent,
-    CarComponent,
+    OrderComponent,
     DialogBoxComponent,
   ],
   imports: [
@@ -74,7 +75,10 @@ import { DialogBoxComponent } from './components/dialog-box/dialog-box.component
   providers: [
     { provide: HTTP_INTERCEPTORS, useClass: TokenInterceptor, multi: true },
     { provide: HTTP_INTERCEPTORS, useClass: ErrorInterceptor, multi: true },
-    AuthenticationService,
+    AuthGuard,
+    AuthAdminGuard,
+    LogoutGuard,
+    AuthService,
     UserService,
     CarsService,
     CacheService,

@@ -10,11 +10,11 @@ import { DialogBoxComponent } from '../dialog-box/dialog-box.component';
 import { MatDialog } from '@angular/material/dialog';
 
 @Component({
-  selector: 'app-car',
-  templateUrl: './car.component.html',
-  styleUrls: ['./car.component.scss'],
+  selector: 'app-order',
+  templateUrl: './order.component.html',
+  styleUrls: ['./order.component.scss'],
 })
-export class CarComponent implements OnInit {
+export class OrderComponent implements OnInit {
   public car: CarModel;
   public imagesFolder: string;
   public minDateFrom = new Date();
@@ -23,7 +23,7 @@ export class CarComponent implements OnInit {
   private currentUser: object;
 
   constructor(
-    private bottomSheetRef: MatBottomSheetRef<CarComponent>,
+    private bottomSheetRef: MatBottomSheetRef<OrderComponent>,
     @Inject(MAT_BOTTOM_SHEET_DATA) public data: any,
     private carsService: CarsService,
     private fb: FormBuilder,

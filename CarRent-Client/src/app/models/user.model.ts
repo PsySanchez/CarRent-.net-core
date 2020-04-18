@@ -4,7 +4,6 @@ export interface UserModel{
     firstName: string;
     lastName: string;
     username: string;
-    password: string;
-    telephone: string;
-    dateOfBirth: Date;
+    phoneNumber: string;
+    role: string;
 }

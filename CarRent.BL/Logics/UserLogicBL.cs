@@ -1,6 +1,7 @@
 ﻿using CarRent.BL.Helpers;
 using CarRent.DAL.Logics;
 using CarRent.Entities;
+using Microsoft.Extensions.Configuration;
 using System.Threading.Tasks;
 
 namespace CarRent.BL.Logics
@@ -12,10 +13,10 @@ namespace CarRent.BL.Logics
         {
             return await _userLogicDAL.GetUserByEmail(email);
         }
-        public async Task<UserEntity> Registration(UserEntity user)
+        public async Task<UserEntity> Registration(UserEntity user, IConfiguration config)
         {
             user.Password = Md5Hash.GetMd5Hash(user.Password);
-            user.Role = "user"; // default
+            user.Role = config.GetValue<string>("UserRoleDefault:Role"); // default
             return await _userLogicDAL.Registration(user);
         }
     }

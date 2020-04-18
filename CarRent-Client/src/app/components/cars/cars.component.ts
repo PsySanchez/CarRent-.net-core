@@ -7,7 +7,7 @@ import { MatPaginator } from '@angular/material/paginator';
 import { environment } from 'src/environments/environment';
 import { Router } from '@angular/router';
 import { MatBottomSheet } from '@angular/material/bottom-sheet';
-import { CarComponent } from '../car/car.component';
+import { OrderComponent } from '../order/order.component';
 import { ToastrService } from 'ngx-toastr';
 
 @Component({
@@ -58,7 +58,7 @@ export class CarsComponent implements OnInit {
   public goToOrder(id: number): void {
     const token = localStorage.getItem('accessToken');
     if (token) {
-      this.bottomSheet.open(CarComponent, {
+      this.bottomSheet.open(OrderComponent, {
         data: { names: ['id', id] },
       });
     } else {
