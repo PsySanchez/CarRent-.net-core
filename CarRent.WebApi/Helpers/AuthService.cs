@@ -51,7 +51,7 @@ namespace CarRent.WebApi.Helpers
             rng.GetBytes(randomNumber);
             return Convert.ToBase64String(randomNumber);
         }
-        public ClaimsPrincipal GetPrincipalFromExpiredToken(string token, IConfiguration config)
+        public ClaimsPrincipal GetPrincipalFromToken(string token, IConfiguration config)
         {
             var tokenValidationParameters = new TokenValidationParameters
             {
@@ -81,27 +81,3 @@ namespace CarRent.WebApi.Helpers
         }
     }
 }
-
-//public string CreateRefreshToken(string email, IConfiguration config)
-//{
-//    var claims = new List<Claim>
-//                {
-//                new Claim(ClaimsIdentity.DefaultNameClaimType, email),
-//                new Claim(ClaimsIdentity.DefaultRoleClaimType, email)
-//                };
-//    var claimsIdentity = new ClaimsIdentity(claims, "RefreshToken", ClaimsIdentity.DefaultNameClaimType,
-//    ClaimsIdentity.DefaultRoleClaimType);
-
-//    var now = DateTime.UtcNow;
-
-//    var jwt = new JwtSecurityToken(
-//    issuer: config.GetValue<string>("JwtAuthentication:ValidIssuer"),
-//    audience: config.GetValue<string>("JwtAuthentication:ValidAudience"),
-//    notBefore: now,
-//    claims: claimsIdentity.Claims,
-//    expires: now.Add(TimeSpan.FromMinutes(config.GetValue<int>("JwtAuthentication:LifeTimeRefreshToken"))),
-//    signingCredentials: new SigningCredentials(GetSymmetricSecurityKey(config.GetValue<string>("JwtAuthentication:SecurityKey")), SecurityAlgorithms.HmacSha256));
-//    var refreshToken = new JwtSecurityTokenHandler().WriteToken(jwt);
-
-//    return refreshToken.Split(".").Last();
-//}

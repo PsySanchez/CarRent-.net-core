@@ -18,8 +18,7 @@ export class TokenInterceptor implements HttpInterceptor {
   ): Observable<HttpEvent<any>> {
     const accessToken = this.authService.getJwtToken();
     const currentUser = JSON.parse(localStorage.getItem('currentUser'));
-
-    if (accessToken) {
+    if (accessToken && !request.url.includes('cars')) {
       if (currentUser.exp < Math.floor(Date.now() / 1000)) {
         return this.authService.refreshToken().pipe(
           switchMap((token: any) => {

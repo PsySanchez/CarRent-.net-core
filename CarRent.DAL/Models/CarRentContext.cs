@@ -1,17 +1,12 @@
-﻿using System;
-using Microsoft.EntityFrameworkCore;
-using Microsoft.EntityFrameworkCore.Metadata;
+﻿using Microsoft.EntityFrameworkCore;
+using Microsoft.Extensions.Configuration;
+using System;
 
 namespace CarRent.DAL.Models
 {
     public partial class CarRentContext : DbContext
     {
         public CarRentContext()
-        {
-        }
-
-        public CarRentContext(DbContextOptions<CarRentContext> options)
-            : base(options)
         {
         }
 
@@ -29,8 +24,13 @@ namespace CarRent.DAL.Models
         {
             if (!optionsBuilder.IsConfigured)
             {
-#warning To protect potentially sensitive information in your connection string, you should move it out of source code. See http://go.microsoft.com/fwlink/?LinkId=723263 for guidance on storing connection strings.
-                optionsBuilder.UseSqlServer("Data Source=HP-Lap;Initial Catalog=CarRent;Trusted_Connection=True;");
+                //#warning To protect potentially sensitive information in your connection string,
+                //you should move it out of source code. See http://go.microsoft.com/fwlink/?LinkId=723263 for guidance on storing connection strings.
+                IConfigurationRoot configuration = new ConfigurationBuilder()
+                    .SetBasePath(AppDomain.CurrentDomain.BaseDirectory)
+                    .AddJsonFile("appsettings.json")
+                    .Build();
+                optionsBuilder.UseSqlServer(configuration.GetConnectionString("CarRentDatabase"));
             }
         }
 

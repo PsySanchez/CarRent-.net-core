@@ -141,8 +141,6 @@ C:\Users\User\OneDrive\Desktop\CarRent.WebApi\CarRent.WebApi\obj\Debug\netcoreap
 C:\Users\User\OneDrive\Desktop\CarRent.WebApi\CarRent.WebApi\obj\Debug\netcoreapp3.1\CarRent.WebApi.pdb
 C:\Users\User\OneDrive\Desktop\CarRent.WebApi\CarRent.WebApi\obj\Debug\netcoreapp3.1\CarRent.WebApi.genruntimeconfig.cache
 C:\Users\User\OneDrive\Documents\GitRepos\CarRent .net core\CarRent.WebApi\obj\Debug\netcoreapp3.1\CarRent.WebApi.csprojAssemblyReference.cache
-C:\Users\User\OneDrive\Documents\GitRepos\CarRent .net core\CarRent.WebApi\obj\Debug\netcoreapp3.1\CarRent.WebApi.csproj.CoreCompileInputs.cache
-C:\Users\User\OneDrive\Documents\GitRepos\CarRent .net core\CarRent.WebApi\obj\Debug\netcoreapp3.1\CarRent.WebApi.MvcApplicationPartsAssemblyInfo.cache
 C:\Users\User\OneDrive\Documents\GitRepos\CarRent .net core\CarRent.WebApi\obj\Debug\netcoreapp3.1\CarRent.WebApi.AssemblyInfoInputs.cache
 C:\Users\User\OneDrive\Documents\GitRepos\CarRent .net core\CarRent.WebApi\obj\Debug\netcoreapp3.1\CarRent.WebApi.AssemblyInfo.cs
 C:\Users\User\OneDrive\Documents\GitRepos\CarRent .net core\CarRent.WebApi\bin\Debug\netcoreapp3.1\appsettings.Development.json
@@ -277,3 +275,14 @@ C:\Users\User\OneDrive\Documents\GitRepos\CarRent .net core\CarRent.WebApi\obj\D
 C:\Users\User\OneDrive\Documents\GitRepos\CarRent .net core\CarRent.WebApi\obj\Debug\netcoreapp3.1\CarRent.WebApi.dll
 C:\Users\User\OneDrive\Documents\GitRepos\CarRent .net core\CarRent.WebApi\obj\Debug\netcoreapp3.1\CarRent.WebApi.pdb
 C:\Users\User\OneDrive\Documents\GitRepos\CarRent .net core\CarRent.WebApi\obj\Debug\netcoreapp3.1\CarRent.WebApi.genruntimeconfig.cache
+C:\Users\User\OneDrive\Documents\GitRepos\CarRent .net core\CarRent.WebApi\bin\Debug\netcoreapp3.1\linq2db.dll
+C:\Users\User\OneDrive\Documents\GitRepos\CarRent .net core\CarRent.WebApi\bin\Debug\netcoreapp3.1\System.Data.SqlClient.dll
+C:\Users\User\OneDrive\Documents\GitRepos\CarRent .net core\CarRent.WebApi\bin\Debug\netcoreapp3.1\runtimes\unix\lib\netcoreapp2.1\System.Data.SqlClient.dll
+C:\Users\User\OneDrive\Documents\GitRepos\CarRent .net core\CarRent.WebApi\bin\Debug\netcoreapp3.1\runtimes\win\lib\netcoreapp2.1\System.Data.SqlClient.dll
+C:\Users\User\OneDrive\Documents\GitRepos\CarRent .net core\CarRent.WebApi\obj\Debug\netcoreapp3.1\CarRent.WebApi.csproj.CoreCompileInputs.cache
+C:\Users\User\OneDrive\Documents\GitRepos\CarRent .net core\CarRent.WebApi\obj\Debug\netcoreapp3.1\CarRent.WebApi.MvcApplicationPartsAssemblyInfo.cache
+C:\Users\User\OneDrive\Documents\GitRepos\CarRent .net core\CarRent.WebApi\bin\Debug\netcoreapp3.1\Microsoft.Extensions.Configuration.FileExtensions.dll
+C:\Users\User\OneDrive\Documents\GitRepos\CarRent .net core\CarRent.WebApi\bin\Debug\netcoreapp3.1\Microsoft.Extensions.Configuration.Json.dll
+C:\Users\User\OneDrive\Documents\GitRepos\CarRent .net core\CarRent.WebApi\bin\Debug\netcoreapp3.1\Microsoft.Extensions.FileProviders.Abstractions.dll
+C:\Users\User\OneDrive\Documents\GitRepos\CarRent .net core\CarRent.WebApi\bin\Debug\netcoreapp3.1\Microsoft.Extensions.FileProviders.Physical.dll
+C:\Users\User\OneDrive\Documents\GitRepos\CarRent .net core\CarRent.WebApi\bin\Debug\netcoreapp3.1\Microsoft.Extensions.FileSystemGlobbing.dll

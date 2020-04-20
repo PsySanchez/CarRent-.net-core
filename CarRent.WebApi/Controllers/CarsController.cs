@@ -4,11 +4,13 @@ using System.Threading.Tasks;
 using CarRent.BL.Logics;
 using CarRent.WebApi.Helpers;
 using CarRent.WebApi.Models;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Logging;
 
 namespace CarRent.WebApi.Controllers
 {
+    [AllowAnonymous]
     [Route("api/[controller]")]
     [ApiController]
     public class CarsController : ControllerBase

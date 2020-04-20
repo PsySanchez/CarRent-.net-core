@@ -50,7 +50,7 @@ namespace CarRent.WebApi.Controllers
         {
             try
             {
-                var principal = _authService.GetPrincipalFromExpiredToken(token.AccessToken, _config);
+                var principal = _authService.GetPrincipalFromToken(token.AccessToken, _config);
                 if (principal == null) return Unauthorized("invalid token");
                 var email = principal.Identity.Name;
                 var user = await _userLogicBL.GetUserByEmail(email);

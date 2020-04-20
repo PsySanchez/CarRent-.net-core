@@ -15,7 +15,7 @@ namespace CarRent.BL.Logics
         }
         public async Task<UserEntity> Registration(UserEntity user, IConfiguration config)
         {
-            user.Password = Md5Hash.GetMd5Hash(user.Password);
+            user.Password = Md5Hash.GetMd5Hash(user.Password + user.Email);
             user.Role = config.GetValue<string>("UserRoleDefault:Role"); // default
             return await _userLogicDAL.Registration(user);
         }

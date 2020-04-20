@@ -8,9 +8,10 @@ using System.Threading.Tasks;
 namespace CarRent.DAL.Logics
 {
     public class CarsLogicDAL
-    {
+    {        
         public async Task<List<CarEntity>> GetAllCars()
         {
+
             using var db = new CarRentContext();
             return await db.Cars.Select(car => new CarEntity
             {
