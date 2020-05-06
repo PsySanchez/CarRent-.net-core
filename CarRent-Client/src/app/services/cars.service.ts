@@ -5,6 +5,9 @@ import { environment } from '../../environments/environment';
 import { CacheService } from './cache.service';
 import { Observable, of } from 'rxjs';
 import { CarModel } from 'src/app/models/car.model';
+import { FormGroup } from '@angular/forms';
+import { UserHelper } from '../helpers/user.helper';
+
 // import { CarManufacturer } from '../models/carManufacturer';
 
 @Injectable({ providedIn: 'root' })
@@ -25,7 +28,7 @@ export class CarsService {
 
   public getOneCars(id: number): Observable<CarModel> {
     if (this.cache.cars) {
-      return of(this.cache.cars.find(car => car.id === id));
+      return of(this.cache.cars.find((car) => car.id === id));
     }
 
     return this.http.get<any>(`${environment.apiUrl}/cars/${id}`).pipe(
@@ -33,6 +36,20 @@ export class CarsService {
         return car;
       })
     );
+  }
+
+  public addNewCar(uploadForm: FormGroup): Observable<any> {
+    console.log(UserHelper.getFormData(uploadForm));
+    return this.http.post(
+      `${environment.apiUrl}/cars/addNewCar`,
+      UserHelper.getFormData(uploadForm)
+    );
+  }
+
+  public addImage(image: File): Observable<any> {
+    const imageForm = new FormData();
+    imageForm.append('image', image);
+    return this.http.post(`${environment.apiUrl}/images/uploadImage`, imageForm);
   }
 
   //   public getAllModels(): Promise<any> {

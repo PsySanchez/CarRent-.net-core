@@ -1,1 +1,2 @@
-export * from './customer/customer.component';
+export * from './info/info.component';
+export * from './orders-history/orders-history.component';

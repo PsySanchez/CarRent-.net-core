@@ -1,13 +1,13 @@
 <div id="bg">
   <section>
     <header>
-      <a [routerLink]="['/home']" routerLinkActive="is-active">Car Rent</a>
+      <!-- <a [routerLink]="['/home']" routerLinkActive="is-active">Car Rent</a> -->
+      <app-navbar></app-navbar>
     </header>
     <nav>
-      <app-navbar></app-navbar>
     </nav>
-    <main>     
-        <router-outlet></router-outlet>
+    <main>
+      <router-outlet></router-outlet>
     </main>
     <footer></footer>
   </section>

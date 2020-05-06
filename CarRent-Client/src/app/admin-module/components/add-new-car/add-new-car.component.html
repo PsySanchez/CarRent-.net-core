@@ -1,0 +1,58 @@
+<div class="upload-form">
+    <form [formGroup]="uploadForm"
+          (ngSubmit)="onSubmit()">
+        <mat-form-field>
+            <mat-label>Model</mat-label>
+            <input matInput
+                   formControlName="model"
+                   required>
+            <mat-error *ngIf="uploadForm.controls.model.invalid">
+                Model if <strong>required</strong>
+            </mat-error>
+        </mat-form-field>
+        <br>
+        <mat-form-field>
+            <mat-label>Manufacturer</mat-label>
+            <input matInput
+                   formControlName="manufacturer"
+                   required>
+            <mat-error *ngIf="uploadForm.controls.manufacturer.invalid">
+                Manufacturer is <strong>required</strong>
+            </mat-error>
+        </mat-form-field>
+        <br>
+        <mat-form-field>
+            <mat-label>Car number</mat-label>
+            <input type="text"
+                   matInput
+                   formControlName="carNumber"
+                   required>
+            <mat-error *ngIf="uploadForm.controls.carNumber.invalid">
+                Car number is <strong>required</strong>
+            </mat-error>
+        </mat-form-field>
+        <br>
+        <mat-form-field>
+            <mat-label>Price per day</mat-label>
+            <input type="number"
+                   min="0"
+                   matInput
+                   formControlName="pricePerDay"
+                   required>
+            <mat-error *ngIf="uploadForm.controls.pricePerDay.invalid">
+                Price per day is <strong>required</strong>
+            </mat-error>
+        </mat-form-field>
+
+        <br>
+        <div>
+            <input (change)="onFileSelected($event)"
+                   type="file"
+                   accept=".png">
+        </div>
+        <br>
+        <button mat-raised-button
+                color="primary"
+                [disabled]="uploadForm.invalid">Upload</button>
+    </form>
+</div>

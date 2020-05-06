@@ -13,10 +13,12 @@ import { MatListModule } from '@angular/material/list';
 import { MatBottomSheetModule } from '@angular/material/bottom-sheet';
 import { MatDatepickerModule } from '@angular/material/datepicker';
 import { MatNativeDateModule, MAT_DATE_LOCALE } from '@angular/material/core';
-import {MatDialogModule} from '@angular/material/dialog';
+import { MatDialogModule } from '@angular/material/dialog';
+import { MatMenuModule } from '@angular/material/menu';
 import { ToastrModule } from 'ngx-toastr';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
+import {MatIconModule} from '@angular/material/icon';
 import {
   SearchComponent,
   HomeComponent,
@@ -35,9 +37,15 @@ import {
   OrderService,
 } from './services/index';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-import { TokenInterceptor, ErrorInterceptor, AuthGuard, AuthAdminGuard, LogoutGuard } from './helpers';
+import {
+  TokenInterceptor,
+  ErrorInterceptor,
+  AuthGuard,
+  AuthAdminGuard,
+  LogoutGuard,
+} from './helpers';
 import { DialogBoxComponent } from './components/dialog-box/dialog-box.component';
-
+import { AddNewCarComponent } from './admin-module/components/add-new-car/add-new-car.component';
 
 @NgModule({
   declarations: [
@@ -51,6 +59,7 @@ import { DialogBoxComponent } from './components/dialog-box/dialog-box.component
     CarsComponent,
     OrderComponent,
     DialogBoxComponent,
+    AddNewCarComponent,
   ],
   imports: [
     BrowserModule,
@@ -71,6 +80,8 @@ import { DialogBoxComponent } from './components/dialog-box/dialog-box.component
     MatNativeDateModule,
     ToastrModule.forRoot(),
     MatDialogModule,
+    MatMenuModule,
+    MatIconModule
   ],
   providers: [
     { provide: HTTP_INTERCEPTORS, useClass: TokenInterceptor, multi: true },

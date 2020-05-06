@@ -44,18 +44,29 @@ namespace CarRent.WebApi.Controllers
                 return StatusCode(500);
             }
         }
-
-        [HttpGet("userOrdersHistory/")]
-        public async Task<IActionResult> GetUserOrdersHistory()
+        // GET: api/Orders/userOrdersHistory/{customer email}
+        [HttpGet("userOrdersHistory/{custEmail}")]
+        public async Task<IActionResult> GetUserOrdersHistory(string custEmail)
         {
             try
             {
+                if (!CustomValidators.IsValidEmail(custEmail)) return ValidationProblem("email not valid");
+
                 var accessToken = await HttpContext.GetTokenAsync("access_token");
                 var principal = _authService.GetPrincipalFromToken(accessToken, _config);
-                var email = principal.Identity.Name;
-                var user = await _userLogicBL.GetUserByEmail(email);
-                var userOrdersHistory = await _ordersLogicBL.GetUserOrdersHistory((int)user.Id);
-                return Ok(userOrdersHistory);
+                var userEmail = principal.Identity.Name;
+                // get the user who sent the request
+                var user = await _userLogicBL.GetUserByEmail(userEmail);
+                // get the user in whose name the request was
+                var cust = await _userLogicBL.GetUserByEmail(custEmail);
+                // the user can receive information only if the request is in his name
+                // , or if he is admin
+                if (custEmail == userEmail || user.Role == "admin")
+                {
+                    var userOrdersHistory = await _ordersLogicBL.GetUserOrdersHistory((int)cust.Id);
+                    return Ok(userOrdersHistory);
+                }
+                return Forbid("email not valid");
             }
             catch (Exception ex)
             {

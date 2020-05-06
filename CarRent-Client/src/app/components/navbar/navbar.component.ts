@@ -7,14 +7,19 @@ import { AuthService } from 'src/app/services';
   styleUrls: ['./navbar.component.scss'],
 })
 export class NavbarComponent implements OnInit {
-  navLinks: any[];
+  public navLinks: any[];
+  public userPath = '';
+  public isLoggin = false;
+  public userMenu = [];
   constructor(private readonly authService: AuthService) {}
 
   ngOnInit(): void {
     setTimeout(() => {
       this.authService.IsUserLoggedIn.subscribe((isLoggin) => {
         if (isLoggin) {
-          const userPath = this.authService.getUserRole();
+          this.isLoggin = true;
+          this.userPath = this.authService.getUserRole();
+          this.setUserMenu(this.userPath);
           this.navLinks = [
             {
               label: 'Home',
@@ -28,12 +33,9 @@ export class NavbarComponent implements OnInit {
               label: 'Logout',
               path: '/logout',
             },
-            {
-              label: 'My Info',
-              path: `${userPath}`,
-            },
           ];
         } else {
+          this.isLoggin = false;
           this.navLinks = [
             {
               label: 'Home',
@@ -51,5 +53,17 @@ export class NavbarComponent implements OnInit {
         }
       });
     }, 1000);
+  }
+
+  private setUserMenu(userRole: string) {
+    this.userMenu = [];
+
+    if (userRole === 'customer') {
+      this.userMenu.push({ label: 'Info', path: '/customer/info' });
+      this.userMenu.push({ label: 'History', path: '/customer/orders-history' });
+    } else if (userRole === 'admin') {
+      this.userMenu.push({ label: 'Add new car', path: '/admin/add-new-car' });
+      this.userMenu.push({ label: 'admin 2' });
+    }
   }
 }

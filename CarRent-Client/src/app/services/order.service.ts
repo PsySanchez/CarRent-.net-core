@@ -4,10 +4,14 @@ import { environment } from '../../environments/environment';
 import { Observable } from 'rxjs';
 import { FormGroup } from '@angular/forms';
 import { UserHelper } from '../helpers/user.helper';
+import { CacheService } from './cache.service';
+import { OrderModel } from '../models/order.model';
+import { map } from 'rxjs/operators';
+
 
 @Injectable({ providedIn: 'root' })
 export class OrderService {
-  constructor(private http: HttpClient) {}
+  constructor(private http: HttpClient, private cache: CacheService) {}
 
   addNewOrder(orderForm: FormGroup): Observable<any> {
     return this.http.post<any>(
@@ -16,12 +20,13 @@ export class OrderService {
     );
   }
 
-  getUserOrders(): Promise<any> {
+  getUserOrdersHistory(userEmail: string): Observable<any> {
     return this.http
-      .get<any>(`${environment.apiUrl}/userOrders`)
-      .toPromise()
-      .then((data) => {
-        return data;
-      });
+      .get<any>(`${environment.apiUrl}/orders/userOrdersHistory/${userEmail}`).pipe(
+        map((orders: OrderModel[]) => {
+          this.cache.userOrders = orders;
+          return orders;
+        })
+      );
   }
 }

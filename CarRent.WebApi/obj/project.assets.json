@@ -8791,11 +8791,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\User\\OneDrive\\Documents\\GitRepos\\CarRent .net core\\CarRent.WebApi\\CarRent.WebApi.csproj",
+      "projectUniqueName": "C:\\Users\\User\\OneDrive\\GitRepos\\CarRent .net core\\CarRent.WebApi\\CarRent.WebApi.csproj",
       "projectName": "CarRent.WebApi",
-      "projectPath": "C:\\Users\\User\\OneDrive\\Documents\\GitRepos\\CarRent .net core\\CarRent.WebApi\\CarRent.WebApi.csproj",
+      "projectPath": "C:\\Users\\User\\OneDrive\\GitRepos\\CarRent .net core\\CarRent.WebApi\\CarRent.WebApi.csproj",
       "packagesPath": "C:\\Users\\User\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\User\\OneDrive\\Documents\\GitRepos\\CarRent .net core\\CarRent.WebApi\\obj\\",
+      "outputPath": "C:\\Users\\User\\OneDrive\\GitRepos\\CarRent .net core\\CarRent.WebApi\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "C:\\Users\\User\\AppData\\Roaming\\NuGet\\NuGet.Config",
@@ -8811,8 +8811,8 @@
       "frameworks": {
         "netcoreapp3.1": {
           "projectReferences": {
-            "C:\\Users\\User\\OneDrive\\Documents\\GitRepos\\CarRent .net core\\CarRent.BL\\CarRent.BL.csproj": {
-              "projectPath": "C:\\Users\\User\\OneDrive\\Documents\\GitRepos\\CarRent .net core\\CarRent.BL\\CarRent.BL.csproj"
+            "C:\\Users\\User\\OneDrive\\GitRepos\\CarRent .net core\\CarRent.BL\\CarRent.BL.csproj": {
+              "projectPath": "C:\\Users\\User\\OneDrive\\GitRepos\\CarRent .net core\\CarRent.BL\\CarRent.BL.csproj"
             }
           }
         }

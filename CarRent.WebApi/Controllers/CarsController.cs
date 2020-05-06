@@ -98,5 +98,21 @@ namespace CarRent.WebApi.Controllers
             }
         }
 
+        // POST: api/Cars/AddNewCar
+        [HttpPost("AddNewCar/")]
+        [Authorize(Roles = "admin")]
+        public async Task<IActionResult> AddNewCar([FromForm] CarView carView)
+        {
+            try
+            {
+
+                return Ok();
+            }
+            catch (Exception ex)
+            {
+                _logger.LogError(ex.ToString());
+                return StatusCode(500);
+            }
+        }
     }
 }

@@ -27,7 +27,7 @@ const routes: Routes = [
   {
     path: 'admin',
     loadChildren: () =>
-      import('./admin-module/admin/admin.module').then((m) => m.AdminModule),
+      import('./admin-module/admin.module').then((m) => m.AdminModule),
     canActivate: [AuthAdminGuard],
   },
   { path: '**', redirectTo: 'home' },

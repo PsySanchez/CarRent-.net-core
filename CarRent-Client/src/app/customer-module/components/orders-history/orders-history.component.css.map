@@ -1,0 +1,9 @@
+{
+    "version": 3,
+    "mappings": "",
+    "sources": [
+        "orders-history.component.scss"
+    ],
+    "names": [],
+    "file": "orders-history.component.css"
+}
