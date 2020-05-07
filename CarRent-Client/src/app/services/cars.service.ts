@@ -39,7 +39,6 @@ export class CarsService {
   }
 
   public addNewCar(uploadForm: FormGroup): Observable<any> {
-    console.log(UserHelper.getFormData(uploadForm));
     return this.http.post(
       `${environment.apiUrl}/cars/addNewCar`,
       UserHelper.getFormData(uploadForm)

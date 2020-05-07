@@ -3,6 +3,7 @@ using CarRent.Entities;
 using Microsoft.EntityFrameworkCore;
 using System.Collections.Generic;
 using System.Linq;
+using System.Reflection;
 using System.Threading.Tasks;
 
 namespace CarRent.DAL.Logics
@@ -57,6 +58,35 @@ namespace CarRent.DAL.Logics
                     CarNumber = car.CarNumber,
                     Manufacturer = car.ManufacturerName
                 }).SingleOrDefaultAsync();
+        }
+
+        public async void AddNewCar(CarEntity carEntity)
+        {
+            using var db = new CarRentContext();
+            ManufacturersCar manufacturer = new ManufacturersCar
+            {
+                ManufacturerName = carEntity.Manufacturer
+            };
+            db.ManufacturersCar.Add(manufacturer);
+            //await db.SaveChangesAsync();
+
+            ModelsCar model = new ModelsCar
+            {
+                Id = manufacturer.Id,
+                Model = carEntity.Model,
+                PricePerDay = carEntity.PricePerDay,
+                Image = carEntity.Image
+            };
+            db.ModelsCar.Add(model);
+            //await db.SaveChangesAsync();
+
+            CompanyFleet company = new CompanyFleet
+            {
+                ModelId = model.Id,
+                CarNumber = carEntity.CarNumber
+            };
+            db.CompanyFleet.Add(company);
+            await db.SaveChangesAsync();
         }
     }
 }

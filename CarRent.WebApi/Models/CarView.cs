@@ -13,7 +13,7 @@ namespace CarRent.WebApi.Models
         [Required]
         public decimal PricePerDay { get; set; }
         [Required]
-        [StringLength(7, MinimumLength = 7)]
+        [StringLength(10, MinimumLength = 9)]
         public string CarNumber { get; set; }
         [Required]
         public string Manufacturer { get; set; }

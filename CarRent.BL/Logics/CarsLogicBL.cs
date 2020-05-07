@@ -17,13 +17,20 @@ namespace CarRent.BL.Logics
         {
             return await _carsLogicDAL.GetAllManufacturers();
         }
+
         public async Task<List<ModelCarEntity>> GetAllModelCars()
         {
             return await _carsLogicDAL.GetAllModelCars();
         }
+
         public async Task<CarEntity> GetCarById(int id)
         {
             return await _carsLogicDAL.GetCarById(id);
+        }
+
+        public void AddNewCar(CarEntity carEntity)
+        {
+            _carsLogicDAL.AddNewCar(carEntity);
         }
     }
 }

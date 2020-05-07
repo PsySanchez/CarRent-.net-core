@@ -36,17 +36,27 @@ export class AddNewCarComponent implements OnInit {
 
   onSubmit() {
     const blob = this.image.slice(0, this.image.size, 'image/png');
-    this.uploadForm.controls.model.value.charAt(0).toUpperCase();
-    const imageName = this.uploadForm.controls.manufacturer.value + this.uploadForm.controls.model.value;
-    const newImage = new File([blob], `${imageName}.png`, {type: 'image/png'});
-    this.uploadForm.controls.image.setValue(imageName);
-
-    this.carService.addImage(newImage).subscribe(() => {
-      console.log('image upload');
-    },
-    (error) => {
-      console.log('image upload error');
+    const model: string = this.uploadForm.controls.model.value;
+    this.uploadForm.controls.model.setValue(
+      model.charAt(0).toUpperCase() + model.substring(1)
+    );
+    console.log(this.uploadForm.controls.model.value);
+    const imageName =
+      this.uploadForm.controls.manufacturer.value +
+      this.uploadForm.controls.model.value;
+    const newImage = new File([blob], `${imageName}.png`, {
+      type: 'image/png',
     });
+    this.uploadForm.controls.image.setValue(imageName);
+    console.log(this.uploadForm);
+    this.carService.addImage(newImage).subscribe(
+      () => {
+        console.log('image upload');
+      },
+      (error) => {
+        console.log('image upload error');
+      }
+    );
 
     this.carService.addNewCar(this.uploadForm).subscribe(
       () => {

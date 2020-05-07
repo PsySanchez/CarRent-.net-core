@@ -100,12 +100,12 @@ namespace CarRent.WebApi.Controllers
 
         // POST: api/Cars/AddNewCar
         [HttpPost("AddNewCar/")]
-        [Authorize(Roles = "admin")]
-        public async Task<IActionResult> AddNewCar([FromForm] CarView carView)
+        [CustomAuthorization(Roles = "admin")]
+        public IActionResult AddNewCar([FromForm] CarView carView)
         {
             try
             {
-
+                _carsLogicBL.AddNewCar(Mappers.MapCarViewToCarEntity(carView));
                 return Ok();
             }
             catch (Exception ex)
