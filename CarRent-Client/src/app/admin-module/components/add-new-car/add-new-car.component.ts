@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import { FormBuilder, FormGroup, Validators } from '@angular/forms';
-import { CarsService } from 'src/app/services';
+import { FormGroup, FormBuilder, Validators } from '@angular/forms';
+import { AdminService } from 'src/app/services/admin.service';
 
 @Component({
   selector: 'app-add-new-car',
@@ -12,7 +12,7 @@ export class AddNewCarComponent implements OnInit {
   private image: File;
   constructor(
     private fb: FormBuilder,
-    private readonly carService: CarsService
+    private readonly carService: AdminService
   ) {}
 
   ngOnInit(): void {
@@ -40,15 +40,13 @@ export class AddNewCarComponent implements OnInit {
     this.uploadForm.controls.model.setValue(
       model.charAt(0).toUpperCase() + model.substring(1)
     );
-    console.log(this.uploadForm.controls.model.value);
     const imageName =
       this.uploadForm.controls.manufacturer.value +
       this.uploadForm.controls.model.value;
     const newImage = new File([blob], `${imageName}.png`, {
       type: 'image/png',
     });
-    this.uploadForm.controls.image.setValue(imageName);
-    console.log(this.uploadForm);
+    this.uploadForm.controls.image.setValue(`${imageName}.png`);
     this.carService.addImage(newImage).subscribe(
       () => {
         console.log('image upload');

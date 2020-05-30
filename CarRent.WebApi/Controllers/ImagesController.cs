@@ -5,6 +5,7 @@ using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Logging;
+using Microsoft.Net.Http.Headers;
 
 namespace CarRent.WebApi.Controllers
 {
@@ -32,32 +33,6 @@ namespace CarRent.WebApi.Controllers
                 _logger.LogError(ex.ToString());
                 return StatusCode(500);
             }
-        }
-        // POST: api/Images/uploadImage
-        [Authorize(Roles = "admin")]
-        [RequestSizeLimit(5000000)]
-        [HttpPost("UploadImage/")]
-        public async Task<IActionResult> Post([FromForm] IFormFile image)
-        {
-            try
-            {
-                if (image == null) return ValidationProblem();
-
-                using var stream = new FileStream(_filePath + image.FileName, FileMode.Create);
-                await image.CopyToAsync(stream);
-                return Ok();
-            }
-            catch (Exception ex)
-            {
-                _logger.LogError(ex.ToString());
-                return StatusCode(500);
-            }
-
-        }
-        [HttpGet]
-        public IActionResult Test()
-        {
-            return Ok("images work");
         }
     }
 }

@@ -38,19 +38,6 @@ export class CarsService {
     );
   }
 
-  public addNewCar(uploadForm: FormGroup): Observable<any> {
-    return this.http.post(
-      `${environment.apiUrl}/cars/addNewCar`,
-      UserHelper.getFormData(uploadForm)
-    );
-  }
-
-  public addImage(image: File): Observable<any> {
-    const imageForm = new FormData();
-    imageForm.append('image', image);
-    return this.http.post(`${environment.apiUrl}/images/uploadImage`, imageForm);
-  }
-
   //   public getAllModels(): Promise<any> {
   //     if (this.cache.models) {
   //       return of(this.cache.models).toPromise();

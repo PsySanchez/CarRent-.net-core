@@ -1,11 +1,9 @@
 using System;
-using CarRent.DAL.Models;
 using CarRent.WebApi.Helpers;
-using LinqToDB;
 using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
-using Microsoft.EntityFrameworkCore;
+using Microsoft.AspNetCore.Http;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
@@ -51,6 +49,11 @@ namespace CarRent.WebApi
             });
             services.AddControllersWithViews();
             services.AddControllers();
+            //services.AddHttpsRedirection(options =>
+            //{
+            //    options.RedirectStatusCode = StatusCodes.Status307TemporaryRedirect;
+            //    options.HttpsPort = 44384;
+            //});
             services.AddCors(options =>
             {
                 options.AddPolicy(AllowSpecificOrigins,
@@ -72,6 +75,7 @@ namespace CarRent.WebApi
             }
 
             app.UseRouting();
+            //app.UseHttpsRedirection();
 
             app.UseCors(AllowSpecificOrigins);
 

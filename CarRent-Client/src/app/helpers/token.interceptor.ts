@@ -11,14 +11,15 @@ import { switchMap } from 'rxjs/operators';
 
 @Injectable()
 export class TokenInterceptor implements HttpInterceptor {
-  constructor(private authService: AuthService) {}
+  constructor(private readonly authService: AuthService) {}
   intercept(
     request: HttpRequest<any>,
     next: HttpHandler
   ): Observable<HttpEvent<any>> {
     const accessToken = this.authService.getJwtToken();
-    const currentUser = JSON.parse(localStorage.getItem('currentUser'));
-    if (accessToken && !request.url.includes('cars')) {
+    const currentUser = this.authService.getCurrentUser();
+    if (accessToken) {
+      // !request.url.includes('cars') && !request.url.includes('refresh')
       if (currentUser.exp < Math.floor(Date.now() / 1000)) {
         return this.authService.refreshToken().pipe(
           switchMap((token: any) => {

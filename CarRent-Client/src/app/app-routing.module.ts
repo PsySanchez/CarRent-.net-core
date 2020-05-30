@@ -16,6 +16,7 @@ const routes: Routes = [
   { path: 'logout', component: HomeComponent, canActivate: [LogoutGuard] },
   { path: 'register', component: RegisterComponent },
   { path: 'page404', component: Page404Component },
+  { path: '', component: HomeComponent },
   {
     path: 'customer',
     loadChildren: () =>

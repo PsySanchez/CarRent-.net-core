@@ -35,6 +35,7 @@ import {
   CacheService,
   AuthService,
   OrderService,
+  AdminService,
 } from './services/index';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import {
@@ -45,7 +46,6 @@ import {
   LogoutGuard,
 } from './helpers';
 import { DialogBoxComponent } from './components/dialog-box/dialog-box.component';
-import { AddNewCarComponent } from './admin-module/components/add-new-car/add-new-car.component';
 
 @NgModule({
   declarations: [
@@ -59,7 +59,6 @@ import { AddNewCarComponent } from './admin-module/components/add-new-car/add-ne
     CarsComponent,
     OrderComponent,
     DialogBoxComponent,
-    AddNewCarComponent,
   ],
   imports: [
     BrowserModule,
@@ -81,7 +80,7 @@ import { AddNewCarComponent } from './admin-module/components/add-new-car/add-ne
     ToastrModule.forRoot(),
     MatDialogModule,
     MatMenuModule,
-    MatIconModule
+    MatIconModule,
   ],
   providers: [
     { provide: HTTP_INTERCEPTORS, useClass: TokenInterceptor, multi: true },
@@ -95,6 +94,7 @@ import { AddNewCarComponent } from './admin-module/components/add-new-car/add-ne
     CacheService,
     MatDatepickerModule,
     OrderService,
+    AdminService,
     { provide: MAT_DATE_LOCALE, useValue: 'en-GB' },
   ],
   bootstrap: [AppComponent],

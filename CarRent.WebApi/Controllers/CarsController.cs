@@ -4,24 +4,27 @@ using System.Threading.Tasks;
 using CarRent.BL.Logics;
 using CarRent.WebApi.Helpers;
 using CarRent.WebApi.Models;
-using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.Logging;
 
 namespace CarRent.WebApi.Controllers
 {
-    [AllowAnonymous]
     [Route("api/[controller]")]
     [ApiController]
     public class CarsController : ControllerBase
     {
+        private readonly IConfiguration _config;
         private readonly ILogger<CarsController> _logger;
+ 
         private readonly CarsLogicBL _carsLogicBL = new CarsLogicBL();
 
-        public CarsController(ILogger<CarsController> logger)
+        public CarsController(ILogger<CarsController> logger, IConfiguration config)
         {
             _logger = logger;
+            _config = config;
         }
+
         // GET: api/Cars
         [HttpGet]
         public async Task<IActionResult> GetAllCars()
@@ -97,16 +100,15 @@ namespace CarRent.WebApi.Controllers
                 return StatusCode(500);
             }
         }
-
-        // POST: api/Cars/AddNewCar
-        [HttpPost("AddNewCar/")]
-        [CustomAuthorization(Roles = "admin")]
-        public IActionResult AddNewCar([FromForm] CarView carView)
+        // GET: api/Images
+        [HttpGet("image/{imageName}")]
+        public IActionResult GetImage(string imageName)
         {
+            var filePath = _config.GetValue<string>("ImagePath:Path");
             try
             {
-                _carsLogicBL.AddNewCar(Mappers.MapCarViewToCarEntity(carView));
-                return Ok();
+                var image = System.IO.File.OpenRead(filePath + imageName);
+                return File(image, "image/png");
             }
             catch (Exception ex)
             {

@@ -1,6 +1,7 @@
 ﻿using CarRent.DAL.Logics;
 using CarRent.Entities;
 using System.Collections.Generic;
+using System.Linq;
 using System.Threading.Tasks;
 
 namespace CarRent.BL.Logics
@@ -30,6 +31,7 @@ namespace CarRent.BL.Logics
 
         public void AddNewCar(CarEntity carEntity)
         {
+            carEntity.Manufacturer = carEntity.Manufacturer.First().ToString().ToUpper() + carEntity.Manufacturer.Substring(1);
             _carsLogicDAL.AddNewCar(carEntity);
         }
     }

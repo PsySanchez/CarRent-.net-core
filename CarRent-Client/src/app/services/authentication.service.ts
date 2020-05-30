@@ -30,26 +30,32 @@ export class AuthService {
   }
 
   public refreshToken(): Observable<any> {
-    const oldToken = JSON.parse(localStorage.getItem('accessToken'));
-    const refreshToken = new FormData();
-    refreshToken.append('accessToken', oldToken.accessToken);
-    refreshToken.append('refreshToken', oldToken.refreshToken);
-    this.logout();
+    const oldToken = this.getJwtToken();
 
-    return this.http
-      .post<any>(`${environment.apiUrl}/authentication/refresh`, refreshToken)
-      .pipe(
-        map((token: any) => {
-          this.setCurrentUserToLocalStorage(token);
-          return token;
-        })
-      );
+    if (oldToken) {
+      const refreshToken = new FormData();
+      refreshToken.append('accessToken', oldToken.accessToken);
+      refreshToken.append('refreshToken', oldToken.refreshToken);
+      this.removeToken();
+      return this.http
+        .post<any>(`${environment.apiUrl}/authentication/refresh`, refreshToken)
+        .pipe(
+          map((token: any) => {
+            this.setCurrentUserToLocalStorage(token);
+            return token;
+          })
+        );
+    }
+  }
+
+  private removeToken(): void {
+    localStorage.removeItem('accessToken');
+    localStorage.removeItem('currentUser');
   }
 
   public logout(): void {
     // remove user from local storage to log user out
-    localStorage.removeItem('accessToken');
-    localStorage.removeItem('currentUser');
+    this.removeToken();
     this.IsUserLoggedIn.next(0);
   }
 
@@ -95,5 +101,9 @@ export class AuthService {
 
   public getJwtToken(): any {
     return JSON.parse(localStorage.getItem('accessToken'));
+  }
+
+  public getCurrentUser(): any {
+    return JSON.parse(localStorage.getItem('currentUser'));
   }
 }

@@ -5,7 +5,6 @@ import { MatSort } from '@angular/material/sort';
 import { MatTableDataSource } from '@angular/material/table';
 import { MatPaginator } from '@angular/material/paginator';
 import { environment } from 'src/environments/environment';
-import { Router } from '@angular/router';
 import { MatBottomSheet } from '@angular/material/bottom-sheet';
 import { OrderComponent } from '../order/order.component';
 import { ToastrService } from 'ngx-toastr';
@@ -35,7 +34,6 @@ export class CarsComponent implements OnInit {
 
   constructor(
     private readonly carsService: CarsService,
-    private router: Router,
     private bottomSheet: MatBottomSheet,
     private toastr: ToastrService,
   ) {}
@@ -51,7 +49,7 @@ export class CarsComponent implements OnInit {
         this.dataSource.paginator = this.paginator;
         this.dataSource.sort = this.sort;
       }, 1000);
-      this.imagesFolder = `${environment.apiUrl}/images`;
+      this.imagesFolder = `${environment.apiUrl}/cars`;
     });
   }
 

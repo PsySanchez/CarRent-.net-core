@@ -1,0 +1,13 @@
+.search-form {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+.mat-form-field {
+  width: 500px;
+}
+/*# sourceMappingURL=cust-search.component.css.map */

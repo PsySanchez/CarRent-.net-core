@@ -87,3 +87,8 @@ table {
   word-break: keep-all;
   margin: 0 !important;
 }
+
+@mixin upload-form {
+  display: flex;
+  justify-content: center;
+}

@@ -60,10 +60,13 @@ export class NavbarComponent implements OnInit {
 
     if (userRole === 'customer') {
       this.userMenu.push({ label: 'Info', path: '/customer/info' });
-      this.userMenu.push({ label: 'History', path: '/customer/orders-history' });
+      this.userMenu.push({
+        label: 'History',
+        path: '/customer/orders-history',
+      });
     } else if (userRole === 'admin') {
       this.userMenu.push({ label: 'Add new car', path: '/admin/add-new-car' });
-      this.userMenu.push({ label: 'admin 2' });
+      this.userMenu.push({ label: 'Search customer', path: '/admin/cust-search' });
     }
   }
 }

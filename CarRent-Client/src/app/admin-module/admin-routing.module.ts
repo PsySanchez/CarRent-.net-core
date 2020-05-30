@@ -1,11 +1,10 @@
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
-import { AdminComponent } from './admin.component';
-import { AddNewCarComponent } from './components';
+import { AddNewCarComponent, CustSearchComponent } from './components';
 
 const routes: Routes = [
-  { path: '', component: AdminComponent },
   { path: 'add-new-car', component: AddNewCarComponent },
+  { path: 'cust-search', component: CustSearchComponent },
 ];
 
 @NgModule({
