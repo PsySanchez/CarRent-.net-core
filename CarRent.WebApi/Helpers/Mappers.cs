@@ -114,6 +114,25 @@ namespace CarRent.WebApi.Helpers
             };
         }
 
+        public static CustSearchEntity MapCustSearchViewToCustSearchEntity(CustSearchView custSearchView)
+        {
+            return new CustSearchEntity
+            {
+                Email = custSearchView.Email,
+                PhoneNumber = custSearchView.PhoneNumber
+            };
+
+        }
+
+        public static CustSearchView MapCustSearchEntityToCustSearchView(CustSearchEntity custSearchEntity)
+        {
+            return new CustSearchView
+            {
+                Email = custSearchEntity.Email,
+                PhoneNumber = custSearchEntity.PhoneNumber
+            };
+        }
+
         //// Casting user bussines logic model to user view model:
         //public static AuthenticationViewModel MapUserModelToAuthenticationViewModel(UserModel userModel)
         //{

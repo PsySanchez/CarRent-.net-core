@@ -13,14 +13,28 @@ export class CustSearchComponent implements OnInit {
 
   ngOnInit(): void {
     this.searchForm = this.fb.group({
-      firstName: ['', Validators.minLength(3)],
-      lastName: ['', Validators.minLength(3)],
-      email: ['', Validators.email],
-      phoneNumber: ['', Validators.minLength(10)],
+      firstName: [''],
+      lastName: [''],
+      email: ['', [Validators.required, Validators.email]],
+      phoneNumber: ['', [Validators.required, Validators.minLength(10)]],
     });
   }
 
-  onSubmit() {
+  public checkIfValid(): boolean {
+    if (this.searchForm.controls.email.valid) {
+      this.searchForm.controls.phoneNumber.setErrors({required: false});
+      this.searchForm.controls.phoneNumber.markAsUntouched();
+      return true;
+    }
+    if (this.searchForm.controls.phoneNumber.valid) {
+      this.searchForm.controls.email.setErrors({required: false});
+      this.searchForm.controls.email.markAsUntouched();
+      return true;
+    }
+
+    return false;
+  }
+  public onSubmit(): void {
     console.log(this.searchForm);
   }
 }

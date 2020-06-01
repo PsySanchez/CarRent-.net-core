@@ -4,7 +4,8 @@
         <mat-form-field>
             <mat-label>First name</mat-label>
             <input matInput
-                   formControlName="firstName">
+                   formControlName="firstName"
+                   minlength="3">
             <mat-error *ngIf="searchForm.controls.firstName.invalid">
                 <strong>At least 3 letters</strong>
             </mat-error>
@@ -13,7 +14,8 @@
         <mat-form-field>
             <mat-label>Last name</mat-label>
             <input matInput
-                   formControlName="lastName">
+                   formControlName="lastName"
+                   minlength="3">
             <mat-error *ngIf="searchForm.controls.lastName.invalid">
                 <strong>At least 3 letters</strong>
             </mat-error>
@@ -42,6 +44,6 @@
         <br>
         <button mat-raised-button
                 color="primary"
-                [disabled]="searchForm.invalid">Search</button>
+                [disabled]="!checkIfValid()">Search</button>
     </form>
 </div>

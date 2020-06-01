@@ -31,7 +31,6 @@ export class AuthService {
 
   public refreshToken(): Observable<any> {
     const oldToken = this.getJwtToken();
-
     if (oldToken) {
       const refreshToken = new FormData();
       refreshToken.append('accessToken', oldToken.accessToken);
@@ -46,6 +45,7 @@ export class AuthService {
           })
         );
     }
+    return null;
   }
 
   private removeToken(): void {

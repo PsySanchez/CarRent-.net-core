@@ -9,7 +9,9 @@ import { AuthService } from './services';
 export class AppComponent implements OnInit {
   title = 'CarRent-Client';
   constructor(private readonly authService: AuthService) {}
-  ngOnInit(){
-    this.authService.refreshToken().subscribe();
+  ngOnInit() {
+    if (this.authService.getJwtToken()) {
+      this.authService.refreshToken().subscribe();
+    }
   }
 }

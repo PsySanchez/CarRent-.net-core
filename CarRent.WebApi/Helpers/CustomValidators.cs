@@ -1,4 +1,5 @@
-﻿using System;
+﻿using CarRent.WebApi.Models;
+using System;
 using System.Net.Mail;
 
 
@@ -26,6 +27,32 @@ namespace CarRent.WebApi.Helpers
                 return false;
             }
             return true;
+        }
+
+        public static bool IsValidCustSearch(CustSearchView cust)
+        {
+            try
+            {
+                if (cust.Email != null)
+                {
+                    var addr = new MailAddress(cust.Email);
+                    return true;
+                }
+                if (cust.PhoneNumber != null && cust.PhoneNumber.Length >= 10)
+                {
+                    var phoneNum = Convert.ToInt32(cust.PhoneNumber.Substring(0, 2));
+                    if (phoneNum == 05)
+                    {
+                        return true;
+                    }
+                }
+                return false;
+            }
+            catch
+            {
+                return false;
+            }
+
         }
     }
 }

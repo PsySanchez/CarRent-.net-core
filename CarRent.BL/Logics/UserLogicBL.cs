@@ -19,5 +19,9 @@ namespace CarRent.BL.Logics
             user.Role = config.GetValue<string>("UserRoleDefault:Role"); // default
             return await _userLogicDAL.Registration(user);
         }
+        public async Task<UserEntity> CustSearch(CustSearchEntity cust)
+        {
+            return await _userLogicDAL.CustSearch(cust);
+        }
     }
 }
